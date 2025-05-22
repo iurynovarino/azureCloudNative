@@ -20,7 +20,7 @@ docker push blogiuryacr.azurecr.io/blog-iury-app:latest
 
 #containerID = blogiuryacr.azurecr.io/blog-iury-app:latest
 #user = blogiuryacr
-#password = duzVmne8ARNgFRMndpcI7910kqjO3fczyj7zUDyAxQ4ARCFXf2B 
+#password = duzVmne8ARNgFRMndpcI7910kqjO3fczyj7zUDyAxQ4ARCFXf2B #Essa senha é obtida no conteiner registry acess key.
 
 # Create Environment container app
 az containerapp env create --name blog-iury-env --resource-group containerapps001 --location eastus
