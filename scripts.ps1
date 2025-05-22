@@ -26,13 +26,13 @@ docker push blogiuryacr.azurecr.io/blog-iury-app:latest
 az containerapp env create --name blog-iury-env --resource-group containerapps001 --location eastus
 
 az containerapp create \
-  --name blog-henrique-app \
+  --name blog-iury-app \
   --resource-group containerapps001 \
   --location eastus \
-  --image bloghenriqueusr.azurecr.io/blog-henrique-app:latest \
-  --environment blog-henrique-env \
+  --image blogiuryusr.azurecr.io/blog-iury-app:latest \
+  --environment blog-iury-env \
   --target-port 80 \
   --ingress external \
-  --registry-username bloghenriqueusr \
+  --registry-username blogiuryusr \
   --registry-password xhN0nfwmgPrRmdexZBlokagQ9YT4jvFDybqA4CRFqfxB \
-  --registry-server bloghenriqueusr.azurecr.io
+  --registry-server blogiuryusr.azurecr.io
