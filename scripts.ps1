@@ -1,11 +1,38 @@
 docker build -t blog-iury-app:latest .
-2 
-3 docker run -d -p 80:80 blog-iury-app:latest
-4 
-5 az login
-6 
-7 # Create a resource group
-8 az group create --name containerappslab03 --location eastus
-9 
-10 # Create Container Registry
-11 az acr create --resource-group containerappslab03 --name blogiury --sku Basic
+ 
+docker run -d -p 80:80 blog-iury-app:latest
+
+az login
+ 
+# Create a resource group
+az group create --name containerappslab03 --location eastus
+ 
+# Create Container Registry
+az acr create --resource-group containerappslab03 --name blogiury --sku Basic
+# Login to ACR
+az acr login --name blogheblogiuryacr
+
+# Tag the image
+docker tag blog-iury-app:latest blogiuryacr.azurecr.io/blog-iury-app:latest
+
+# Push the image
+docker push blogiuryacr.azurecr.io/blog-iury-app:latest
+
+#containerID = blogiuryacr.azurecr.io/blog-iury-app:latest
+#user = blogiuryacr
+#password = duzVmne8ARNgFRMndpcI7910kqjO3fczyj7zUDyAxQ4ARCFXf2B 
+
+# Create Environment container app
+az containerapp env create --name blog-iury-env --resource-group containerapps001 --location eastus
+
+az containerapp create \
+  --name blog-henrique-app \
+  --resource-group containerapps001 \
+  --location eastus \
+  --image bloghenriqueusr.azurecr.io/blog-henrique-app:latest \
+  --environment blog-henrique-env \
+  --target-port 80 \
+  --ingress external \
+  --registry-username bloghenriqueusr \
+  --registry-password xhN0nfwmgPrRmdexZBlokagQ9YT4jvFDybqA4CRFqfxB \
+  --registry-server bloghenriqueusr.azurecr.io
