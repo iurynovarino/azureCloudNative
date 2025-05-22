@@ -10,5 +10,5 @@ Bem-vindo ao repositório do **Bootcamp Microsoft Azure Cloud Native** da DIO! A
 
 <h2>Considerações 
 </h2>
-<p>Nessa branch está os arquivos utilizados para o lab3 do capítulo "Criando um Blog com Container Apps", para executar esse projeto localmente será necessário clonar o repositório para a sua máquina, possuir o docker, azure cli e uma conta na nuvem Azure. A senhas exibidas nesse repositório são meramente ilustrativas já não estão mais disponíveis, logo será necessário adequar a sua necessidade.
+<p>Para executar esse projeto localmente será necessário clonar o repositório para a sua máquina, possuir o docker, azure cli e uma conta na nuvem Azure. A senhas exibidas nesse repositório são meramente ilustrativas já não estão mais disponíveis, logo será necessário adequar a sua necessidade.
 </p>
